@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
-/* 
+
 Route::get('/', function () {
     return view('principal.ini');
 });
- */
+
 
 Route::get('/principal/ini', function () {
     return view('principal.ini');
