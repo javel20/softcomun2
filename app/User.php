@@ -26,4 +26,32 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    /* public function accesos()
+    {
+        return $this->belongsToMany('Softcomun\Acceso');
+    } */
+
+    public function proyectos()
+    {
+        return $this->belongsToMany(Proyecto::class);
+    } 
+
+    public function proyectoUser()
+    {
+        return $this->hasMany(ProyectoUser::class);
+    }
+
+
+    /* public function scopeUsers($query)
+    {
+        return $query->select('users.*')
+                    ->get();
+
+    } */
 }
