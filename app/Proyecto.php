@@ -49,5 +49,7 @@ class Proyecto extends Model
                     ->orWhere('tipotrabajadors.nombre','LIKE', "%$dato->buscar%")
                     ->select('trabajadors.*', 'tipotrabajadors.nombre as nombrett')
                     ->paginate(7);
+    }*/
 
 }
+

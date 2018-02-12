@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Proyecto;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        //dd('home controler');
+        $proyectoss = Proyecto::where('user_id',Auth()->user()->id)->get();
+        //dd(Auth()->user()->id);
+        return view("proyectos.indexporlogin")->with([
+             'proyectoss' => $proyectoss
+        ]);
+
+        return view('asd');
     }
 }
